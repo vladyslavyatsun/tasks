@@ -23,20 +23,17 @@
 
 
 -(void) setPersonFirstName:(NSString *)personFirstName{
-    
-    [personFirstName retain];
     [_personFirstName release];
-    _personFirstName = personFirstName;
-    
-    
+    _personFirstName = [personFirstName copy];
 }
+
 -(NSString *) personFirstName{
     return _personFirstName;
 }
+
 -(void) setPersonLastName:(NSString *)personLastName{
-    [personLastName retain];
     [_personLastName release];
-    _personLastName = personLastName;
+    _personLastName = [personLastName copy];
 }
 -(NSString *) personLastName{
     return _personLastName;
@@ -48,9 +45,17 @@
     return _personYear;
 }
 
+-(instancetype)init{
+    self = [super init];
+    if(self){
+        _personBooks = [NSMutableArray new];
+    }
+    return self;
+}
+
 //Реализовать инициализатор c возможностью задать вышеописанные свойства;
 -(instancetype)initPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear{
-    self = [super init];
+    self = [self init];
     if(self != nil){
         _personFirstName = personFirstName;
         _personLastName = personLastName;

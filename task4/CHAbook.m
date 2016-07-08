@@ -29,7 +29,7 @@
 }
 
 -(instancetype) initWithName:(NSString *)bookName  Year:(int)bookYear Type:(bookType)typeBook{
-    self = [super init];
+    self = [self init];
     if(self){
         _name = bookName;
         _year = bookYear;

@@ -10,12 +10,12 @@
 #import "CHAbook.h"
 
 @interface CHAperson : NSObject
-@property(readwrite, retain) NSString *personFirstName;
-@property(readwrite, retain) NSString *personLastName;
+@property(readwrite, copy) NSString *personFirstName;
+@property(readwrite, copy) NSString *personLastName;
 @property NSInteger personYear;
 @property(readonly) NSString *fullName;
 @property(readonly) CHAbook *currentBook;
-@property NSMutableArray *personBooks;
+@property(readonly) NSMutableArray *personBooks;
 
 -(instancetype)initPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear;
 +(instancetype)createPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear;

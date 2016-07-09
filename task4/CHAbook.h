@@ -9,26 +9,33 @@
 #import <Foundation/Foundation.h>
 @class CHAperson;
 
-@interface CHAbook : NSObject
-
 typedef enum
 {
-    paperback,
-    hardcover,
-    undefined
+    kCHABookPaperback,
+    kCHABookHardcover,
+    kCHABookUndefined
 } bookType;
 
+
+@interface CHAbook : NSObject
+
+
+@property(readonly) NSString *idBook;
 @property(readwrite, assign) CHAperson *owner;
+@property(readwrite, retain) NSString *name;
+@property(readwrite) bookType type;
+@property(readwrite) NSInteger year;
 
--(instancetype) initWithName:(NSString *)bookName  Year:(int)bookYear Type:(bookType)typeBook;
+-(instancetype) initWithName:(NSString *)bookName  Year:(NSInteger)bookYear Type:(bookType)typeBook IdBook :(NSString *) idBook;
 
--(NSString *) getName;
--(void) setName:(NSString *) newName;
--(bookType) getType;
--(void) setType:(bookType) newType;
--(int)getYear;
--(void) setYear:(int) newYear;
+//-(NSString *) getName;
+//-(void) setName:(NSString *) newName;
+//-(bookType) getType;
+//-(void) setType:(bookType) newType;
+//-(int)getYear;
+//-(void)setYear:(int) newYear;
+//-(NSString *) idBook;
 
-+(CHAbook *)createAutoreleseBookName:(NSString *)name Year:(int)year Type:(bookType)type;
++(CHAbook *)createAutoreleseBookName:(NSString *)name Year:(NSInteger)year Type:(bookType)type IdBook:(NSString *)idBook;
 
 @end

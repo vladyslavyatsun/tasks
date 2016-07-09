@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FD9B6271C68E2508A8EF0504B2F0A96FB221FD50",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2E9FAD04A6F006079EC0A5AE2FAA3367D39C16C8" : 0,
+    "FD9B6271C68E2508A8EF0504B2F0A96FB221FD50" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "01BF674E-0D9F-4B27-9F10-C95E5AE3F5CC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2E9FAD04A6F006079EC0A5AE2FAA3367D39C16C8" : "task2\/",
+    "FD9B6271C68E2508A8EF0504B2F0A96FB221FD50" : "task4\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "task4",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "task4.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.university:challenger\/task2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2E9FAD04A6F006079EC0A5AE2FAA3367D39C16C8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vladyslavyatsun\/tasks.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FD9B6271C68E2508A8EF0504B2F0A96FB221FD50"
+    }
+  ]
+}

@@ -15,12 +15,12 @@
 @property NSInteger personYear;
 @property(readonly) NSString *fullName;
 @property(readonly) CHAbook *currentBook;
-@property(readonly) NSMutableArray *personBooks;
+@property(readonly) NSArray *personBooks;
 
 -(instancetype)initPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear;
 +(instancetype)createPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear;
 
 -(BOOL)takeBook: (CHAbook *)aBook;
--(BOOL)returnCurrentBook;
+-(BOOL)returnCurrentBook :(CHAbook *)aBook;
 
 @end

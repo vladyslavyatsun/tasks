@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A7987401D312C3F007457CE /* CHALibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A79873F1D312C3F007457CE /* CHALibrary.m */; };
 		8ABE9F601D2FDC28008EEDE3 /* CHAbook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE9F5D1D2FDC28008EEDE3 /* CHAbook.m */; };
 		8ABE9F611D2FDC28008EEDE3 /* CHAperson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE9F5F1D2FDC28008EEDE3 /* CHAperson.m */; };
 		8ACE01E41D2FD3E500036C61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE01DF1D2FD3E400036C61 /* main.m */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A79873E1D312C3F007457CE /* CHALibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHALibrary.h; sourceTree = "<group>"; };
+		8A79873F1D312C3F007457CE /* CHALibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHALibrary.m; sourceTree = "<group>"; };
 		8ABE9F5C1D2FDC28008EEDE3 /* CHAbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAbook.h; sourceTree = "<group>"; };
 		8ABE9F5D1D2FDC28008EEDE3 /* CHAbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAbook.m; sourceTree = "<group>"; };
 		8ABE9F5E1D2FDC28008EEDE3 /* CHAperson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAperson.h; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 				8ABE9F5E1D2FDC28008EEDE3 /* CHAperson.h */,
 				8ABE9F5F1D2FDC28008EEDE3 /* CHAperson.m */,
 				8ACE01DF1D2FD3E400036C61 /* main.m */,
+				8A79873E1D312C3F007457CE /* CHALibrary.h */,
+				8A79873F1D312C3F007457CE /* CHALibrary.m */,
 			);
 			path = task4;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A7987401D312C3F007457CE /* CHALibrary.m in Sources */,
 				8ACE01E41D2FD3E500036C61 /* main.m in Sources */,
 				8ABE9F601D2FDC28008EEDE3 /* CHAbook.m in Sources */,
 				8ABE9F611D2FDC28008EEDE3 /* CHAperson.m in Sources */,

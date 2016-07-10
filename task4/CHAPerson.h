@@ -7,20 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CHAbook.h"
+#import "CHABook.h"
 
-@interface CHAperson : NSObject
+@interface CHAPerson : NSObject
 @property(readwrite, copy) NSString *personFirstName;
 @property(readwrite, copy) NSString *personLastName;
 @property NSInteger personYear;
 @property(readonly) NSString *fullName;
-@property(readonly) CHAbook *currentBook;
 @property(readonly) NSArray *personBooks;
 
 -(instancetype)initPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear;
+-(instancetype)initPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear personBooks :(NSArray *)personBooks;
+
 +(instancetype)createPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear;
 
--(BOOL)takeBook: (CHAbook *)aBook;
--(BOOL)returnCurrentBook :(CHAbook *)aBook;
+-(BOOL)isEqualWithoutBooks:(CHAPerson *)person;
+-(BOOL)takeBook: (CHABook *)aBook;
+-(BOOL)returnCurrentBook :(CHABook *)aBook;
 
 @end

@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8A7987401D312C3F007457CE /* CHALibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A79873F1D312C3F007457CE /* CHALibrary.m */; };
-		8ABE9F601D2FDC28008EEDE3 /* CHAbook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE9F5D1D2FDC28008EEDE3 /* CHAbook.m */; };
-		8ABE9F611D2FDC28008EEDE3 /* CHAperson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE9F5F1D2FDC28008EEDE3 /* CHAperson.m */; };
+		8A85951B1D32857300D70677 /* CHAPerson+CHAPersonDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85951A1D32857300D70677 /* CHAPerson+CHAPersonDictionary.m */; };
+		8A85951E1D3285AE00D70677 /* CHABook+CHABookDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85951D1D3285AE00D70677 /* CHABook+CHABookDictionary.m */; };
+		8A8595241D3287B100D70677 /* CHALibrary+CHADictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8595231D3287B100D70677 /* CHALibrary+CHADictionary.m */; };
+		8ABE9F601D2FDC28008EEDE3 /* CHABook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE9F5D1D2FDC28008EEDE3 /* CHABook.m */; };
+		8ABE9F611D2FDC28008EEDE3 /* CHAPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE9F5F1D2FDC28008EEDE3 /* CHAPerson.m */; };
 		8ACE01E41D2FD3E500036C61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE01DF1D2FD3E400036C61 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -28,10 +31,16 @@
 /* Begin PBXFileReference section */
 		8A79873E1D312C3F007457CE /* CHALibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHALibrary.h; sourceTree = "<group>"; };
 		8A79873F1D312C3F007457CE /* CHALibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHALibrary.m; sourceTree = "<group>"; };
-		8ABE9F5C1D2FDC28008EEDE3 /* CHAbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAbook.h; sourceTree = "<group>"; };
-		8ABE9F5D1D2FDC28008EEDE3 /* CHAbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAbook.m; sourceTree = "<group>"; };
-		8ABE9F5E1D2FDC28008EEDE3 /* CHAperson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAperson.h; sourceTree = "<group>"; };
-		8ABE9F5F1D2FDC28008EEDE3 /* CHAperson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAperson.m; sourceTree = "<group>"; };
+		8A8595191D32857300D70677 /* CHAPerson+CHAPersonDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHAPerson+CHAPersonDictionary.h"; sourceTree = "<group>"; };
+		8A85951A1D32857300D70677 /* CHAPerson+CHAPersonDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CHAPerson+CHAPersonDictionary.m"; sourceTree = "<group>"; };
+		8A85951C1D3285AE00D70677 /* CHABook+CHABookDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHABook+CHABookDictionary.h"; sourceTree = "<group>"; };
+		8A85951D1D3285AE00D70677 /* CHABook+CHABookDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CHABook+CHABookDictionary.m"; sourceTree = "<group>"; };
+		8A8595221D3287B100D70677 /* CHALibrary+CHADictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHALibrary+CHADictionary.h"; sourceTree = "<group>"; };
+		8A8595231D3287B100D70677 /* CHALibrary+CHADictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CHALibrary+CHADictionary.m"; sourceTree = "<group>"; };
+		8ABE9F5C1D2FDC28008EEDE3 /* CHABook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHABook.h; sourceTree = "<group>"; };
+		8ABE9F5D1D2FDC28008EEDE3 /* CHABook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHABook.m; sourceTree = "<group>"; };
+		8ABE9F5E1D2FDC28008EEDE3 /* CHAPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAPerson.h; sourceTree = "<group>"; };
+		8ABE9F5F1D2FDC28008EEDE3 /* CHAPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAPerson.m; sourceTree = "<group>"; };
 		8ACE01D51D2FD3B300036C61 /* task4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = task4; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ACE01DF1D2FD3E400036C61 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../task2/task2/main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +56,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A8595101D32841800D70677 /* book */ = {
+			isa = PBXGroup;
+			children = (
+				8ABE9F5C1D2FDC28008EEDE3 /* CHABook.h */,
+				8ABE9F5D1D2FDC28008EEDE3 /* CHABook.m */,
+				8A85951C1D3285AE00D70677 /* CHABook+CHABookDictionary.h */,
+				8A85951D1D3285AE00D70677 /* CHABook+CHABookDictionary.m */,
+			);
+			name = book;
+			sourceTree = "<group>";
+		};
+		8A8595111D32843900D70677 /* person */ = {
+			isa = PBXGroup;
+			children = (
+				8ABE9F5E1D2FDC28008EEDE3 /* CHAPerson.h */,
+				8ABE9F5F1D2FDC28008EEDE3 /* CHAPerson.m */,
+				8A8595191D32857300D70677 /* CHAPerson+CHAPersonDictionary.h */,
+				8A85951A1D32857300D70677 /* CHAPerson+CHAPersonDictionary.m */,
+			);
+			name = person;
+			sourceTree = "<group>";
+		};
+		8A8595121D32845400D70677 /* library */ = {
+			isa = PBXGroup;
+			children = (
+				8A79873E1D312C3F007457CE /* CHALibrary.h */,
+				8A79873F1D312C3F007457CE /* CHALibrary.m */,
+				8A8595221D3287B100D70677 /* CHALibrary+CHADictionary.h */,
+				8A8595231D3287B100D70677 /* CHALibrary+CHADictionary.m */,
+			);
+			name = library;
+			sourceTree = "<group>";
+		};
 		8ACE01CC1D2FD3B300036C61 = {
 			isa = PBXGroup;
 			children = (
@@ -66,13 +108,10 @@
 		8ACE01D71D2FD3B300036C61 /* task4 */ = {
 			isa = PBXGroup;
 			children = (
-				8ABE9F5C1D2FDC28008EEDE3 /* CHAbook.h */,
-				8ABE9F5D1D2FDC28008EEDE3 /* CHAbook.m */,
-				8ABE9F5E1D2FDC28008EEDE3 /* CHAperson.h */,
-				8ABE9F5F1D2FDC28008EEDE3 /* CHAperson.m */,
+				8A8595121D32845400D70677 /* library */,
+				8A8595111D32843900D70677 /* person */,
+				8A8595101D32841800D70677 /* book */,
 				8ACE01DF1D2FD3E400036C61 /* main.m */,
-				8A79873E1D312C3F007457CE /* CHALibrary.h */,
-				8A79873F1D312C3F007457CE /* CHALibrary.m */,
 			);
 			path = task4;
 			sourceTree = "<group>";
@@ -136,8 +175,11 @@
 			files = (
 				8A7987401D312C3F007457CE /* CHALibrary.m in Sources */,
 				8ACE01E41D2FD3E500036C61 /* main.m in Sources */,
-				8ABE9F601D2FDC28008EEDE3 /* CHAbook.m in Sources */,
-				8ABE9F611D2FDC28008EEDE3 /* CHAperson.m in Sources */,
+				8ABE9F601D2FDC28008EEDE3 /* CHABook.m in Sources */,
+				8A85951E1D3285AE00D70677 /* CHABook+CHABookDictionary.m in Sources */,
+				8A85951B1D32857300D70677 /* CHAPerson+CHAPersonDictionary.m in Sources */,
+				8A8595241D3287B100D70677 /* CHALibrary+CHADictionary.m in Sources */,
+				8ABE9F611D2FDC28008EEDE3 /* CHAPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

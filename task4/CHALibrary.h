@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CHAbook.h"
-#import "CHAperson.h"
+#import "CHAPerson.h"
 
 @interface CHALibrary : NSObject
 @property(readonly)NSArray *personArray;
 @property(readonly)NSArray *bookArray;
+
+-(instancetype)initWithPersonArray:(NSArray *)persons BookArray:(NSArray *)books;
+
+-(BOOL)addPerson:(CHAPerson *)aPerson;
+-(BOOL)removePerson:(CHAPerson *)aPerson;
+
+-(BOOL)addBook:(CHABook *)aBook;
+-(BOOL)removeBook:(CHABook *)aBook;
 @end

@@ -8,32 +8,28 @@
 
 #import "CHABook.h"
 
-@implementation CHAbook
-
-//{
-//@private
-//    NSString *_name;
-//    int _year;
-//    bookType _type;
-//    NSString *_idBook;
-//}
-
-//@synthesize idBook = _idBook;
+@implementation CHABook
 
 -(instancetype)init{
     self = [self initWithName:nil Year:-1 Type:3 IdBook:nil];
     return self;
 }
 
--(instancetype) initWithName:(NSString *)bookName  Year:(NSInteger)bookYear Type:(bookType)typeBook IdBook :(NSString *) idBook{
+-(instancetype) initWithName:(NSString *)bookName  Year:(NSInteger)bookYear Type:(bookType)typeBook IdBook :(NSString *) idBook Owner :(CHAPerson *)owner{
     self = [super init];
-    if(self){
+    if(self != nil){
         _name = bookName;
         _year = bookYear;
         _type = typeBook;
         _idBook = idBook;
+        _owner = owner;
     }
     return self; 
+}
+
+-(instancetype) initWithName:(NSString *)bookName  Year:(NSInteger)bookYear Type:(bookType)typeBook IdBook :(NSString *) idBook{
+    self = [self initWithName: bookName Year:bookYear Type:typeBook IdBook:idBook Owner:nil];
+    return self;
 }
 
 
@@ -76,7 +72,7 @@
 //}
 
 
-+(CHAbook *)createAutoreleseBookName:(NSString *)name Year:(NSInteger)year Type:(bookType)type IdBook:(NSString *)idBook{
++(CHABook *)createAutoreleseBookName:(NSString *)name Year:(NSInteger)year Type:(bookType)type IdBook:(NSString *)idBook{
     return [[[self alloc]initWithName:name Year:year Type:type IdBook:idBook]autorelease];
 }
 
@@ -112,18 +108,28 @@
             + [self.idBook length] * 9) - 3);
 }
 
-
--(BOOL)isEqual:(CHAbook *)aBook{
+- (BOOL)isEqualWithoutOwner:(CHABook *)aBook{
     BOOL result = NO;
-    if([aBook isKindOfClass:[CHAbook class]]
+    if([aBook isKindOfClass:[CHABook class]]
        && self.hash == aBook.hash
        && [self.idBook isEqual: aBook.idBook]
        && [self.name isEqual:aBook.name]
        && self.type == aBook.type
-       && self.year == aBook.year
-       && [self.owner isEqual: aBook.owner])
-    { result = YES;}
+       && self.year == aBook.year){
+        result = YES;
+    }
     return result;
 }
+
+
+-(BOOL)isEqual:(CHABook *)aBook{
+    BOOL result = [self isEqualWithoutOwner:aBook];
+    if(result){
+        //TODO: resolve problem
+        result = [self.owner isEqualWithoutBooks: aBook.owner];
+    }
+    return result;
+}
+
 
 @end

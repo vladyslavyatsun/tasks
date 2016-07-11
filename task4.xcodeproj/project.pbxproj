@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A71D8E11D33A0CD00C1A577 /* CHALibrary+CHALibraryDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A71D8E01D33A0CD00C1A577 /* CHALibrary+CHALibraryDictionary.m */; };
 		8A7987401D312C3F007457CE /* CHALibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A79873F1D312C3F007457CE /* CHALibrary.m */; };
 		8A85951B1D32857300D70677 /* CHAPerson+CHAPersonDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85951A1D32857300D70677 /* CHAPerson+CHAPersonDictionary.m */; };
 		8A85951E1D3285AE00D70677 /* CHABook+CHABookDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A85951D1D3285AE00D70677 /* CHABook+CHABookDictionary.m */; };
-		8A8595241D3287B100D70677 /* CHALibrary+CHADictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8595231D3287B100D70677 /* CHALibrary+CHADictionary.m */; };
 		8ABE9F601D2FDC28008EEDE3 /* CHABook.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE9F5D1D2FDC28008EEDE3 /* CHABook.m */; };
 		8ABE9F611D2FDC28008EEDE3 /* CHAPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE9F5F1D2FDC28008EEDE3 /* CHAPerson.m */; };
 		8ACE01E41D2FD3E500036C61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE01DF1D2FD3E400036C61 /* main.m */; };
@@ -29,14 +29,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8A71D8DF1D33A0CD00C1A577 /* CHALibrary+CHALibraryDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHALibrary+CHALibraryDictionary.h"; sourceTree = "<group>"; };
+		8A71D8E01D33A0CD00C1A577 /* CHALibrary+CHALibraryDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CHALibrary+CHALibraryDictionary.m"; sourceTree = "<group>"; };
 		8A79873E1D312C3F007457CE /* CHALibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHALibrary.h; sourceTree = "<group>"; };
 		8A79873F1D312C3F007457CE /* CHALibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHALibrary.m; sourceTree = "<group>"; };
 		8A8595191D32857300D70677 /* CHAPerson+CHAPersonDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHAPerson+CHAPersonDictionary.h"; sourceTree = "<group>"; };
 		8A85951A1D32857300D70677 /* CHAPerson+CHAPersonDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CHAPerson+CHAPersonDictionary.m"; sourceTree = "<group>"; };
 		8A85951C1D3285AE00D70677 /* CHABook+CHABookDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHABook+CHABookDictionary.h"; sourceTree = "<group>"; };
 		8A85951D1D3285AE00D70677 /* CHABook+CHABookDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CHABook+CHABookDictionary.m"; sourceTree = "<group>"; };
-		8A8595221D3287B100D70677 /* CHALibrary+CHADictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CHALibrary+CHADictionary.h"; sourceTree = "<group>"; };
-		8A8595231D3287B100D70677 /* CHALibrary+CHADictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CHALibrary+CHADictionary.m"; sourceTree = "<group>"; };
 		8ABE9F5C1D2FDC28008EEDE3 /* CHABook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHABook.h; sourceTree = "<group>"; };
 		8ABE9F5D1D2FDC28008EEDE3 /* CHABook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHABook.m; sourceTree = "<group>"; };
 		8ABE9F5E1D2FDC28008EEDE3 /* CHAPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAPerson.h; sourceTree = "<group>"; };
@@ -83,8 +83,8 @@
 			children = (
 				8A79873E1D312C3F007457CE /* CHALibrary.h */,
 				8A79873F1D312C3F007457CE /* CHALibrary.m */,
-				8A8595221D3287B100D70677 /* CHALibrary+CHADictionary.h */,
-				8A8595231D3287B100D70677 /* CHALibrary+CHADictionary.m */,
+				8A71D8DF1D33A0CD00C1A577 /* CHALibrary+CHALibraryDictionary.h */,
+				8A71D8E01D33A0CD00C1A577 /* CHALibrary+CHALibraryDictionary.m */,
 			);
 			name = library;
 			sourceTree = "<group>";
@@ -175,10 +175,10 @@
 			files = (
 				8A7987401D312C3F007457CE /* CHALibrary.m in Sources */,
 				8ACE01E41D2FD3E500036C61 /* main.m in Sources */,
+				8A71D8E11D33A0CD00C1A577 /* CHALibrary+CHALibraryDictionary.m in Sources */,
 				8ABE9F601D2FDC28008EEDE3 /* CHABook.m in Sources */,
 				8A85951E1D3285AE00D70677 /* CHABook+CHABookDictionary.m in Sources */,
 				8A85951B1D32857300D70677 /* CHAPerson+CHAPersonDictionary.m in Sources */,
-				8A8595241D3287B100D70677 /* CHALibrary+CHADictionary.m in Sources */,
 				8ABE9F611D2FDC28008EEDE3 /* CHAPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

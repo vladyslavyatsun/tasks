@@ -12,15 +12,15 @@ NSString *const kCHAKeyBookName = @"bookName";
 NSString *const kCHAKeyBookYear = @"bookYear";
 NSString *const kCHAKeyBookType = @"bookType";
 NSString *const kCHAKeyBookId = @"bookId";
-NSString *const KCHAKeyBookOwner = @"bookOwner";
+//NSString *const KCHAKeyBookOwner = @"bookOwner";
 
 @implementation CHABook (CHABookDictionary)
 - (instancetype)initWithDictionaryRepresentation:(NSDictionary *)aDictionary{
     return [self initWithName:aDictionary[kCHAKeyBookName]
                          Year:[aDictionary[kCHAKeyBookYear] integerValue]
                          Type:[aDictionary[kCHAKeyBookType] unsignedIntegerValue]
-                       IdBook:aDictionary[kCHAKeyBookId]
-                        Owner:aDictionary[KCHAKeyBookOwner]];
+                       IdBook:aDictionary[kCHAKeyBookId]];
+                    //    Owner:aDictionary[KCHAKeyBookOwner]];
 }
 
 - (NSDictionary *)dictionaryRepresentation{
@@ -29,7 +29,7 @@ NSString *const KCHAKeyBookOwner = @"bookOwner";
     dictionary[kCHAKeyBookYear] = @(self.year);
     dictionary[kCHAKeyBookType] = @(self.type);
     if(self.idBook) dictionary[kCHAKeyBookId] = self.idBook;
-    if(self.owner) dictionary[KCHAKeyBookOwner] = self.owner;
+  //  if(self.owner) dictionary[KCHAKeyBookOwner] = self.owner;
     return dictionary;
 
 }

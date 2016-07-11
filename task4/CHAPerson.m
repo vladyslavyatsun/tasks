@@ -24,10 +24,11 @@
 -(instancetype)initPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear personBooks :(NSArray *)personBooks{
     self = [super init];
     if(self != nil){
-        _personFirstName = personFirstName;
-        _personLastName = personLastName;
+        _personFirstName = [personFirstName retain];
+        _personLastName = [personLastName retain];
         _personYear = personYear;
-        [self.mPersonBooks addObjectsFromArray:personBooks];
+        self.mPersonBooks = [NSMutableArray new];
+
        // [personBooks release]; // is it ok?
     }
 

@@ -18,11 +18,11 @@
 -(instancetype) initWithName:(NSString *)bookName  Year:(NSInteger)bookYear Type:(bookType)typeBook IdBook :(NSString *) idBook Owner :(CHAPerson *)owner{
     self = [super init];
     if(self != nil){
-        _name = bookName;
+        _name = [bookName retain];
         _year = bookYear;
         _type = typeBook;
         _idBook = idBook;
-        _owner = owner;
+        _owner = [owner retain];
     }
     return self; 
 }

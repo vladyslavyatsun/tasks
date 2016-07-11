@@ -14,13 +14,15 @@ NSString *const kCHAKeyPersons = @"persons";
 @implementation CHALibrary (CHALibraryDictionary)
 
 - (instancetype)initWithDictionaryRepresentation:(NSDictionary *)aDictionary {
-    NSMutableArray *temp = aDictionary[kCHAKeyPersons];
-    for (CHAPerson *person in temp) {
+    NSMutableArray *tempPerson = aDictionary[kCHAKeyPersons];
+    NSMutableArray *tempBooks = [NSMutableArray new];
+    for (CHAPerson *person in tempPerson) {
         for (CHABook *book in person.personBooks) {
             [book setOwner:person];
+            [tempBooks addObject:book];
         }
     }
-    return [self initWithPersonArray:aDictionary[kCHAKeyPersons] BookArray:temp];
+    return [self initWithPersonArray:tempPerson BookArray:(NSArray *)tempBooks];
 }
 
 - (NSDictionary *)dictionaryRepresentation {

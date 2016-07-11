@@ -15,8 +15,17 @@
 
 @implementation CHALibrary
 
--(instancetype)initWithPersonArray:(NSArray *)persons BookArray:(NSArray *)books{
+-(instancetype)init{
     self = [super init];
+    if(self != nil){
+        self.mPersonArray = [NSMutableArray new];
+        self.mBookArray = [NSMutableArray new];
+    }
+    return self;
+}
+
+-(instancetype)initWithPersonArray:(NSArray *)persons BookArray:(NSArray *)books{
+    self = [self init];
     if(self != nil){
         [_mPersonArray addObjectsFromArray:persons];
         [_mBookArray addObjectsFromArray:books];

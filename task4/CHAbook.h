@@ -19,10 +19,9 @@ typedef enum
 
 @interface CHABook : NSObject
 
-
 @property(readonly) NSString *idBook;
 @property(readwrite, assign) CHAPerson *owner;
-@property(readwrite, copy) NSString *name;
+@property(readwrite, copy, nonatomic) NSString *name;
 @property(readwrite) bookType type;
 @property(readwrite) NSInteger year;
 

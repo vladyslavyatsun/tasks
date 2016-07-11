@@ -29,8 +29,6 @@
     if(self != nil){
         [_mPersonArray addObjectsFromArray:persons];
         [_mBookArray addObjectsFromArray:books];
- //       [persons release];  // ??????
- //       [books release];    // ??????
     }
     return self;
 }
@@ -92,5 +90,11 @@
 
 -(NSArray *)bookArray{
     return (NSArray *)self.mBookArray;
+}
+
+- (void)dealloc{
+    [_mPersonArray release];
+    [_mBookArray release];
+    [super dealloc];
 }
 @end

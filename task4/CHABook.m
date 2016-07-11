@@ -8,7 +8,19 @@
 
 #import "CHABook.h"
 
+@interface CHABook()
+{
+    @private
+    NSString *_idBook;
+    CHAPerson *_owner;
+    NSString *_name;
+    bookType _type;
+    NSInteger _year;
+}
+@end
+
 @implementation CHABook
+
 
 -(instancetype)init{
     self = [self initWithName:nil Year:-1 Type:3 IdBook:nil];
@@ -18,10 +30,10 @@
 -(instancetype) initWithName:(NSString *)bookName  Year:(NSInteger)bookYear Type:(bookType)typeBook IdBook :(NSString *) idBook Owner :(CHAPerson *)owner{
     self = [super init];
     if(self != nil){
-        _name = [bookName retain];
+        _name = [bookName copy];
         _year = bookYear;
         _type = typeBook;
-        _idBook = idBook;
+        _idBook = [idBook copy];
         _owner = [owner retain];
     }
     return self; 
@@ -44,9 +56,6 @@
     return [[[self alloc]initWithName:name Year:year Type:type IdBook:idBook]autorelease];
 }
 
--(NSString *) description{
-    return [NSString stringWithFormat: @"\nName : %@\nYear : %ld\nType : %@\n", self.name, self.year, [self getStringTypeDescription]];
-}
 
 - (NSString *)getStringTypeDescription{
     NSString  * type = nil;
@@ -63,12 +72,43 @@
     return type;
 }
 
--(void)dealloc{
-    [self.name release];
-    [self.owner release];
-    [super dealloc];
+
+-(NSString *)idBook{
+    return _idBook;
 }
 
+-(NSString *)name{
+    return _name;
+}
+
+-(void)setName:(NSString *)name{
+    [_name release];
+    _name = [name copy];
+}
+
+-(void)setOwner:(CHAPerson *)owner{
+    _owner = owner;
+}
+
+-(CHAPerson *)owner{
+    return _owner;
+}
+
+-(void)setType:(bookType)type{
+    _type = type;
+}
+
+-(bookType)type{
+    return _type;
+}
+
+-(void)setYear:(NSInteger)year{
+    _year = year;
+}
+
+-(NSInteger)year{
+    return _year;
+}
 
 -(NSUInteger)hash{
     return ABS(([self.name length]*3
@@ -92,5 +132,15 @@
     return result;
 }
 
+-(NSString *) description{
+    return [NSString stringWithFormat: @"\nName : %@\nYear : %ld\nType : %@\nOwner : %@\n", self.name, self.year, [self getStringTypeDescription], self.owner];
+}
+
+-(void)dealloc{
+    [self.name release];
+    [self.owner release];
+    [self.idBook release];
+    [super dealloc];
+}
 
 @end

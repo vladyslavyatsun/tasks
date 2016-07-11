@@ -9,27 +9,34 @@
 #import "CHAPerson.h"
 
 @interface CHAPerson()
+{
+    NSString *_personFirstName;
+    NSString *_personLastName;
+    NSInteger _personYear;
+    
+}
     @property NSMutableArray *mPersonBooks;
     @property(readwrite, retain, nonatomic) NSString *fullName;
+
 @end
 
 @implementation CHAPerson
 
 //Реализовать инициализатор c возможностью задать вышеописанные свойства;
 -(instancetype)initPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear{
-    self = [self initPersonWithFirstName:personFirstName PersonLastName:personLastName PersonYear:personYear personBooks:[NSMutableArray new]];
+    self = [self initPersonWithFirstName:personFirstName PersonLastName:personLastName PersonYear:personYear personBooks:nil];
     return self;
 }
 
 -(instancetype)initPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear personBooks :(NSArray *)personBooks{
     self = [super init];
     if(self != nil){
-        _personFirstName = [personFirstName retain];
-        _personLastName = [personLastName retain];
-        _personYear = personYear;
         self.mPersonBooks = [NSMutableArray new];
-
-       // [personBooks release]; // is it ok?
+        _personFirstName = [personFirstName copy];
+        _personLastName = [personLastName copy];
+        _personYear = personYear;
+        
+        [self.mPersonBooks addObjectsFromArray:personBooks];
     }
 
     return self;
@@ -65,40 +72,6 @@
 }
 
 
-//Реализовываем корректный dealloc;
--(void)dealloc{
-    [self.personLastName release];
-    [self.personFirstName release];
-    [self.mPersonBooks release];
-    [super dealloc];
-}
-
--(NSString *)fullName{
-    if(_fullName == nil){
-        return [NSString stringWithFormat: @"%@ %@", self.personFirstName, self.personLastName];
-    } else {
-        if([[NSString stringWithFormat: @"%@ %@", self.personFirstName, self.personLastName] isEqualToString: self.fullName]){
-            [self.fullName release];
-            self.fullName = [NSString stringWithFormat: @"%@ %@", self.personFirstName, self.personLastName];
-        }
-        return [self fullName];
-    }
-    
-}
-
-//Расширяем описание класса (description), добавив fullName.
--(NSString *)description{
-    return [NSString stringWithFormat: @"\nFull Name : %@", self.fullName];
-}
-
-
-
--(NSUInteger)hash{
-    return ABS(([self.personFirstName length] * 3
-                    + [self.personLastName length] * 5
-                    + self.personYear * 7) - 9);
-}
-
 
 - (BOOL)containBook:(CHABook *)personBook{
     BOOL result = NO;
@@ -110,13 +83,51 @@
     return result;
 }
 
--(BOOL)isEqualArrays:(NSArray *)personBooks{
+-(BOOL)isEqualArraysBooks:(NSArray *)personBooks{
+    if([self.personBooks count] != [personBooks count]) return NO;
     for (CHABook *personBook in personBooks) {
         if(![self containBook:personBook]){
             return NO;
         }
     }
     return YES;
+}
+
+
+-(void)setPersonFirstName:(NSString *)personFirstName{
+    [_personFirstName release];
+    _personFirstName = [personFirstName copy];
+}
+
+-(NSString *)personFirstName{
+    return _personFirstName;
+}
+
+-(void)setPersonLastName:(NSString *)personLastName{
+    [_personLastName release];
+    _personLastName = [personLastName copy];
+}
+
+-(NSString *)personLastName{
+    return _personLastName;
+}
+
+-(void)setPersonYear:(NSInteger)personYear{
+    _personYear = personYear;
+}
+
+-(NSInteger)personYear{
+    return _personYear;
+}
+
+-(NSArray *)personBooks{
+    return (NSArray *)self.mPersonBooks;
+}
+
+-(NSUInteger)hash{
+    return ABS(([self.personFirstName length] * 3
+                + [self.personLastName length] * 5
+                + self.personYear * 7) - 9);
 }
 
 
@@ -128,14 +139,35 @@
        && [self.personFirstName isEqual : person.personFirstName]
        && [self.personLastName isEqual : person.personLastName]
        && self.personYear == person.personYear
-       && [self isEqualArrays:person.personBooks]) result = YES;
+       && [self isEqualArraysBooks:person.personBooks]) result = YES;
     return result;
 }
 
 
--(NSArray *)personBooks{
-    return (NSArray *)self.mPersonBooks;
+-(NSString *)fullName{
+    if(_fullName == nil){
+        return [NSString stringWithFormat: @"%@ %@", self.personFirstName, self.personLastName];
+    } else {
+        if([[NSString stringWithFormat: @"%@ %@", self.personFirstName, self.personLastName] isEqualToString: self.fullName]){
+            [self.fullName release];
+            self.fullName = [NSString stringWithFormat: @"%@ %@", self.personFirstName, self.personLastName];
+        }
+        return [self fullName];
+    }
 }
 
+//Расширяем описание класса (description), добавив fullName.
+-(NSString *)description{
+    return [NSString stringWithFormat: @"\nFull Name : %@", self.fullName];
+}
+
+
+//Реализовываем корректный dealloc;
+-(void)dealloc{
+    [self.personLastName release];
+    [self.personFirstName release];
+    [self.mPersonBooks release];
+    [super dealloc];
+}
 
 @end

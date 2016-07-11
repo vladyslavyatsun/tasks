@@ -21,7 +21,6 @@
 
 +(instancetype)createPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear;
 
--(BOOL)isEqualWithoutBooks:(CHAPerson *)person;
 -(BOOL)takeBook: (CHABook *)aBook;
 -(BOOL)returnCurrentBook :(CHABook *)aBook;
 

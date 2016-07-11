@@ -15,16 +15,6 @@
 
 @implementation CHAPerson
 
-//{
-//    @private
-//    NSString *_personFirstName;
-//    NSString *_personLastName;
-//    NSInteger _personYear;
-//}
-
-
-
-
 //Реализовать инициализатор c возможностью задать вышеописанные свойства;
 -(instancetype)initPersonWithFirstName :(NSString *)personFirstName PersonLastName :(NSString *)personLastName PersonYear :(NSInteger)personYear{
     self = [self initPersonWithFirstName:personFirstName PersonLastName:personLastName PersonYear:personYear personBooks:[NSMutableArray new]];
@@ -108,48 +98,39 @@
                     + self.personYear * 7) - 9);
 }
 
-- (BOOL)isEqualWithoutBooks:(CHAPerson*)person{
+
+- (BOOL)containBook:(CHABook *)personBook{
+    BOOL result = NO;
+    for (CHABook *book in self.personBooks) {
+        if([book.idBook isEqual: personBook.idBook]){
+            result = YES;
+        }
+    }
+    return result;
+}
+
+-(BOOL)isEqualArrays:(NSArray *)personBooks{
+    for (CHABook *personBook in personBooks) {
+        if(![self containBook:personBook]){
+            return NO;
+        }
+    }
+    return YES;
+}
+
+
+//Порівнюємо книги по id
+- (BOOL)isEqual:(CHAPerson *)person{
     BOOL result = NO;
     if([person isKindOfClass:[CHAPerson class]]
        && self.hash == person.hash
        && [self.personFirstName isEqual : person.personFirstName]
        && [self.personLastName isEqual : person.personLastName]
-       && self.personYear == person.personYear) result = YES;
-    return result;
-    
-}
-
-- (BOOL)isEqual:(CHAPerson *)person{
-    BOOL result = NO;
-    if([self isEqualWithoutBooks:person] && [self.personBooks isEqualToArray:person.personBooks]){
-        result = YES;
-    }
+       && self.personYear == person.personYear
+       && [self isEqualArrays:person.personBooks]) result = YES;
     return result;
 }
 
-
-//-(void) setPersonFirstName:(NSString *)personFirstName{
-//    [_personFirstName release];
-//    _personFirstName = [personFirstName copy];
-//}
-//
-//-(NSString *) personFirstName{
-//    return _personFirstName;
-//}
-//
-//-(void) setPersonLastName:(NSString *)personLastName{
-//    [_personLastName release];
-//    _personLastName = [personLastName copy];
-//}
-//-(NSString *) personLastName{
-//    return _personLastName;
-//}
-//-(void) setPersonYear:(NSInteger)personYear{
-//    _personYear = personYear;
-//}
-//-(NSInteger) personYear{
-//    return _personYear;
-//}
 
 -(NSArray *)personBooks{
     return (NSArray *)self.mPersonBooks;

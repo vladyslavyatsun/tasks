@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CHAPerson.h"
+#import "CHALibrary+CHADictionary.h"
 
 @interface CHALibrary : NSObject
 @property(readonly)NSArray *personArray;

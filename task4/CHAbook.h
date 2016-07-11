@@ -31,6 +31,5 @@ typedef enum
 -(instancetype) initWithName:(NSString *)bookName  Year:(NSInteger)bookYear Type:(bookType)typeBook;
 
 +(CHABook *)createAutoreleseBookName:(NSString *)name Year:(NSInteger)year Type:(bookType)type IdBook:(NSString *)idBook;
-- (BOOL)isEqualWithoutOwner:(CHABook *)aBook;
 
 @end

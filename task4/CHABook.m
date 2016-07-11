@@ -39,38 +39,6 @@
     return self;
 }
 
-//-(NSString *) getName{
-//    return _name;
-//}
-//-(void) setName:(NSString *) newName{
-//    if(newName != self.getName){
-//        [newName retain];
-//        [_name release];
-//        _name = newName;
-//        
-//    }
-//}
-
-//-(int)getYear{
-//    return _year;
-//}
-//
-//-(void) setYear:(int) newYear{
-//    _year = newYear;
-//}
-//
-//-(bookType) getType{
-//    return _type;
-//}
-//
-//-(void) setType:(bookType) newType{
-//    _type = newType;
-//}
-//
-//-(NSString *)idBook{
-//    return _idBook;
-//}
-
 
 +(CHABook *)createAutoreleseBookName:(NSString *)name Year:(NSInteger)year Type:(bookType)type IdBook:(NSString *)idBook{
     return [[[self alloc]initWithName:name Year:year Type:type IdBook:idBook]autorelease];
@@ -97,6 +65,7 @@
 
 -(void)dealloc{
     [self.name release];
+    [self.owner release];
     [super dealloc];
 }
 
@@ -108,25 +77,17 @@
             + [self.idBook length] * 9) - 3);
 }
 
-- (BOOL)isEqualWithoutOwner:(CHABook *)aBook{
+
+-(BOOL)isEqual:(CHABook *)aBook{
     BOOL result = NO;
     if([aBook isKindOfClass:[CHABook class]]
        && self.hash == aBook.hash
        && [self.idBook isEqual: aBook.idBook]
        && [self.name isEqual:aBook.name]
        && self.type == aBook.type
-       && self.year == aBook.year){
-        result = YES;
-    }
-    return result;
-}
-
-
--(BOOL)isEqual:(CHABook *)aBook{
-    BOOL result = [self isEqualWithoutOwner:aBook];
-    if(result){
-        //TODO: resolve problem
-        result = [self.owner isEqualWithoutBooks: aBook.owner];
+       && self.year == aBook.year
+       && [self.owner isEqual: aBook.owner]){
+    result = YES;
     }
     return result;
 }

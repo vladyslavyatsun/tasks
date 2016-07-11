@@ -16,14 +16,27 @@ NSString *const kCHAKeyPersonBooks = @"personBooks";
 
 @implementation CHAPerson (CHAPersonDictionary)
 - (instancetype)initWithDictionaryRepresentation:(NSDictionary *)aDictionary{
-    return [self initPersonWithFirstName:aDictionary[kCHAKeyFirstName] PersonLastName:aDictionary[kCHAKeyLastName] PersonYear: [aDictionary[kCHAKeyPersonYear] integerValue] personBooks:aDictionary[kCHAKeyPersonBooks]];
+    CHAPerson *person = [[CHAPerson alloc]initPersonWithFirstName:aDictionary[kCHAKeyFirstName] PersonLastName:aDictionary[kCHAKeyLastName] PersonYear: [aDictionary[kCHAKeyPersonYear] integerValue]];
+    NSMutableArray *temp = aDictionary[kCHAKeyPersonBooks];
+    
+    
+    return person;
 }
 - (NSDictionary *)dictionaryRepresentation{
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     if(self.personFirstName) dictionary[kCHAKeyFirstName] = self.personFirstName;
     if(self.personLastName) dictionary[kCHAKeyLastName] = self.personLastName;
     dictionary[kCHAKeyPersonYear] = @(self.personYear);
-    if(self.personBooks) dictionary[kCHAKeyPersonBooks] = self.personBooks;
+    if(self.personBooks) {
+        //масив ид книг
+        NSMutableArray *temp = [NSMutableArray new];
+        
+        for (CHABook *book in self.personBooks) {
+            [temp addObject:book.idBook];
+        }
+        dictionary[kCHAKeyPersonBooks] = temp;
+        [temp release];
+    }
     return dictionary;
 }
 @end
